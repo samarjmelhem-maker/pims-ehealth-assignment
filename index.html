@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>PIMS Two-Article Synthesis · Registration · University of Jordan</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D2D6B;
+    --navy-2: #1A3F8F;
+    --teal: #0A7E8C;
+    --teal-2: #14A0B0;
+    --yellow: #FFD166;
+    --green: #06D6A0;
+    --coral: #FF6B6B;
+    --bg: #F2F5FF;
+    --card: #FFFFFF;
+    --border: #D0DAF0;
+    --text: #1A2332;
+    --muted: #5A6B85;
+    --shadow: 0 4px 14px rgba(13,45,107,.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background:
+      radial-gradient(1200px 600px at 90% -10%, rgba(10,126,140,.08), transparent 60%),
+      radial-gradient(1200px 600px at -10% 110%, rgba(255,209,102,.10), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, var(--teal) 130%);
+    color: #fff;
+    padding: 28px 32px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; right: -60px; top: -60px; width: 220px; height: 220px;
+    background: var(--yellow); opacity: .12; border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+    background: linear-gradient(90deg, var(--yellow) 0%, var(--teal-2) 50%, var(--green) 100%);
+  }
+  .hero-inner { max-width: 920px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+  }
+  .hero-eyebrow .dot { width: 7px; height: 7px; background: var(--yellow); border-radius: 50%; }
+  .hero h1 {
+    font-size: 26px; font-weight: 800; margin: 12px 0 4px; letter-spacing: -.3px;
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+  .hero .subtitle { font-size: 14px; opacity: .9; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; }
+  .hero-meta .label { font-size: 11px; opacity: .7; text-transform: uppercase; letter-spacing: .8px; }
+  .hero-meta .value { font-size: 14px; font-weight: 700; }
+  .instructor-card {
+    position: absolute; top: 22px; right: 32px; z-index: 3;
+    background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.18);
+    border-radius: 10px; padding: 12px 16px; max-width: 280px;
+    backdrop-filter: blur(6px);
+  }
+  .instructor-card .name { font-weight: 700; font-size: 13px; }
+  .instructor-card .role { font-size: 11px; opacity: .85; margin-top: 2px; }
+
+  /* BODY */
+  .container { max-width: 720px; margin: 36px auto; padding: 0 24px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 22px;
+  }
+  .card h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 22px; margin: 0 0 6px; color: var(--navy);
+  }
+  .card .sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+
+  /* FORM */
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block; font-size: 13px; font-weight: 700;
+    color: var(--navy); margin-bottom: 6px;
+    text-transform: uppercase; letter-spacing: .4px;
+  }
+  .field label .req { color: var(--coral); margin-left: 3px; }
+  .field input {
+    width: 100%; padding: 12px 14px; font-size: 15px;
+    font-family: inherit;
+    border: 2px solid var(--border); border-radius: 8px;
+    background: #FAFBFE; color: var(--text);
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .field input:focus {
+    outline: none; border-color: var(--teal); background: #fff;
+  }
+  .field .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  .btn {
+    display: inline-block; padding: 13px 28px; font-size: 15px; font-weight: 700;
+    border: none; border-radius: 8px; cursor: pointer; font-family: inherit;
+    transition: transform .08s ease, box-shadow .12s ease;
+  }
+  .btn-primary { background: var(--teal); color: #fff; }
+  .btn-primary:hover:not(:disabled) { background: #086e7b; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(10,126,140,.3); }
+  .btn-primary:disabled { background: #94B4BB; cursor: not-allowed; }
+
+  .alert {
+    padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 16px;
+  }
+  .alert-error { background: #FDECEC; color: #B22; border-left: 4px solid var(--coral); }
+  .alert-ok    { background: #E8F7EE; color: #0A6E3C; border-left: 4px solid var(--green); }
+  .hidden { display: none !important; }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .info-grid > div {
+    background: #F2F5FF; padding: 10px 14px; border-radius: 8px;
+    border-left: 3px solid var(--teal);
+  }
+  .info-grid .l { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .info-grid .v { font-size: 14px; font-weight: 700; color: var(--navy); }
+
+  ul.rules { padding-left: 20px; font-size: 13.5px; }
+  ul.rules li { margin-bottom: 6px; }
+  ul.rules li b { color: var(--navy); }
+
+  .footer-note {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin: 24px 0 40px;
+  }
+
+  @media (max-width: 720px) {
+    .instructor-card { display: none; }
+    .info-grid { grid-template-columns: 1fr; }
+    .hero { padding: 22px 20px 18px; }
+    .hero h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="instructor-card">
+    <div class="name">Dr. Samar J. Melhem</div>
+    <div class="role">Assistant Professor of Digital Health<br>School of Pharmacy · University of Jordan<br>Office 225 · sa.melhem@ju.edu.jo</div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="dot"></span> PIMS · M.Pharm Pharmacy Administration</div>
+    <h1>Two-Article Synthesis Assignment — Registration</h1>
+    <div class="subtitle">Open-book · Auto-graded · One attempt only</div>
+    <div class="hero-meta">
+      <div><div class="label">Opens</div><div class="value">16 May · 6:00 PM</div></div>
+      <div><div class="label">Last entry</div><div class="value">16 May · 9:00 PM</div></div>
+      <div><div class="label">Closes</div><div class="value">16 May · 10:00 PM</div></div>
+      <div><div class="label">Time allowed</div><div class="value">60 minutes</div></div>
+      <div><div class="label">Marks</div><div class="value">20 (16 × 1 MCQs + 2 × 2 essays)</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- REGISTRATION FORM -->
+  <div class="card" id="regCard">
+    <h2>Register for your access link</h2>
+    <p class="sub">Enter the details below. Your assigned form (A, B, or C) and a personal access token will be emailed to the address you provide.</p>
+
+    <div id="alertBox" class="alert hidden"></div>
+
+    <div class="field">
+      <label for="nameInput">Full name <span class="req">*</span></label>
+      <input type="text" id="nameInput" autocomplete="name" placeholder="e.g. Aisha Faisal Nabulsi">
+    </div>
+
+    <div class="field">
+      <label for="idInput">University ID number <span class="req">*</span></label>
+      <input type="text" id="idInput" autocomplete="off" placeholder="e.g. 8240888" inputmode="numeric">
+      <div class="hint">The numeric portion of your @ju.edu.jo email (without letters).</div>
+    </div>
+
+    <div class="field">
+      <label for="emailInput">University of Jordan email <span class="req">*</span></label>
+      <input type="email" id="emailInput" autocomplete="email" placeholder="e.g. afn8240888@ju.edu.jo">
+      <div class="hint">Use the email address registered for this assignment.</div>
+    </div>
+
+    <button class="btn btn-primary" id="submitBtn">Send my access link</button>
+
+    <div style="margin-top:24px; padding-top:18px; border-top:1px solid var(--border);">
+      <p style="font-size:13px; color:var(--muted); margin:0 0 8px;"><b>Important rules</b></p>
+      <ul class="rules" style="color:var(--text);">
+        <li>Only registered M.Pharm Administration students may take this assignment.</li>
+        <li>Your access token is valid for <b>24 hours</b> from when it is sent.</li>
+        <li>The window opens <b>Saturday 16 May 2026 at 6:00 PM</b> Amman time and closes <b>Saturday 16 May 2026 at 10:00 PM</b>.</li>
+        <li>The <b>last possible time to start</b> is Saturday 16 May 2026 at <b>9:00 PM</b> Amman time. After that, no new attempts can be started.</li>
+        <li>Once you click <b>Begin assessment</b> on the form, you have <b>60 minutes</b>. The timer cannot be paused.</li>
+        <li>You have <b>one attempt only</b>. After submission, the form will not reopen.</li>
+        <li>Please do not share your token. It is bound to your university email.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SUCCESS PANEL -->
+  <div class="card hidden" id="successCard">
+    <h2 style="color:var(--green);">✓ Access link sent</h2>
+    <p class="sub">Please check your University of Jordan inbox. The email contains your assigned form and access token.</p>
+
+    <div class="info-grid">
+      <div><div class="l">Sent to</div><div class="v" id="successEmail">—</div></div>
+      <div><div class="l">Assigned form</div><div class="v" id="successForm">—</div></div>
+      <div><div class="l">Token valid for</div><div class="v">24 hours</div></div>
+      <div><div class="l">Time per attempt</div><div class="v">60 minutes</div></div>
+    </div>
+
+    <p style="font-size:13px; color:var(--muted); margin-top:14px;">
+      If you do not see the email within a few minutes, check your spam folder. The email is sent from
+      <b>sa.melhem@ju.edu.jo</b>.
+    </p>
+
+    <p style="font-size:13px; margin-top:18px;">
+      <button class="btn btn-primary" id="anotherBtn" style="background:var(--navy);">Register a different student</button>
+    </p>
+  </div>
+
+</div>
+
+<div class="footer-note">
+  Dr. Samar J. Melhem · School of Pharmacy · University of Jordan · Office 225<br>
+  PIMS · M.Pharm Pharmacy Administration · 2026
+</div>
+
+<script>
+// =============================================================================
+// REGISTRATION SCRIPT
+// =============================================================================
+const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwPdJA4x8ni5JqTndLTK8sKQJ9Yqmm2_2SjE_Ia9EzfSSCTJ86GDo0vy7czN0UgZk26/exec';
+
+const $ = (id) => document.getElementById(id);
+
+function showAlert(msg, type) {
+  const box = $('alertBox');
+  box.className = 'alert alert-' + (type || 'error');
+  box.textContent = msg;
+  box.classList.remove('hidden');
+}
+function hideAlert() {
+  $('alertBox').classList.add('hidden');
+}
+
+async function backendGet(params) {
+  const qs = Object.keys(params).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k])).join('&');
+  const r = await fetch(BACKEND_URL + '?' + qs, { method: 'GET' });
+  return await r.json();
+}
+
+async function submitRegistration() {
+  hideAlert();
+  const name  = $('nameInput').value.trim();
+  const stuId = $('idInput').value.trim();
+  const email = $('emailInput').value.trim().toLowerCase();
+
+  if (!name)  { showAlert('Please enter your full name.'); $('nameInput').focus(); return; }
+  if (!stuId) { showAlert('Please enter your university ID number.'); $('idInput').focus(); return; }
+  if (!email) { showAlert('Please enter your university email.'); $('emailInput').focus(); return; }
+  if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+    showAlert('Please enter a valid email address.');
+    $('emailInput').focus(); return;
+  }
+
+  const btn = $('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const resp = await backendGet({ action: 'request', email: email, name: name, id: stuId });
+    if (!resp.ok) {
+      showAlert(resp.error || 'Could not send the access link. Please try again.');
+      btn.disabled = false;
+      btn.textContent = 'Send my access link';
+      return;
+    }
+    $('successEmail').textContent = email;
+    $('successForm').textContent  = 'Form ' + (resp.form || '?');
+    $('regCard').classList.add('hidden');
+    $('successCard').classList.remove('hidden');
+    window.scrollTo(0, 0);
+  } catch (err) {
+    showAlert('Network error. Please check your connection and try again.');
+    btn.disabled = false;
+    btn.textContent = 'Send my access link';
+  }
+}
+
+function resetForm() {
+  $('nameInput').value = '';
+  $('idInput').value = '';
+  $('emailInput').value = '';
+  $('submitBtn').disabled = false;
+  $('submitBtn').textContent = 'Send my access link';
+  hideAlert();
+  $('successCard').classList.add('hidden');
+  $('regCard').classList.remove('hidden');
+  $('nameInput').focus();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  $('submitBtn').addEventListener('click', submitRegistration);
+  $('anotherBtn').addEventListener('click', resetForm);
+
+  // Enter key advances; on email field, submit
+  ['nameInput', 'idInput'].forEach(id => {
+    $(id).addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const order = ['nameInput', 'idInput', 'emailInput'];
+        const next = order[order.indexOf(id) + 1];
+        if (next) $(next).focus();
+      }
+    });
+  });
+  $('emailInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); submitRegistration(); }
+  });
+});
+</script>
+</body>
+</html>

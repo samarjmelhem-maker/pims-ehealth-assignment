@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>PIMS Two-Article Synthesis · Form C · University of Jordan</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D2D6B;
+    --navy-2: #1A3F8F;
+    --teal: #0A7E8C;
+    --teal-2: #14A0B0;
+    --yellow: #FFD166;
+    --green: #06D6A0;
+    --coral: #FF6B6B;
+    --bg: #F2F5FF;
+    --card: #FFFFFF;
+    --border: #D0DAF0;
+    --text: #1A2332;
+    --muted: #5A6B85;
+    --shadow: 0 4px 14px rgba(13,45,107,.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background:
+      radial-gradient(1200px 600px at 90% -10%, rgba(10,126,140,.08), transparent 60%),
+      radial-gradient(1200px 600px at -10% 110%, rgba(255,209,102,.10), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+
+  /* HERO / HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, var(--teal) 130%);
+    color: #fff; padding: 28px 32px 22px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px;
+    background: var(--yellow); opacity: .12; border-radius: 50%;
+  }
+  .hero::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+    background: linear-gradient(90deg, var(--yellow) 0%, var(--teal-2) 50%, var(--green) 100%);
+  }
+  .hero-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+    backdrop-filter: blur(4px);
+  }
+  .hero-eyebrow .dot { width: 7px; height: 7px; background: var(--yellow); border-radius: 50%; }
+  .hero h1 {
+    font-size: 26px; font-weight: 800; margin: 12px 0 4px; letter-spacing: -.3px;
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+  .hero .subtitle { font-size: 14px; opacity: .9; font-weight: 400; }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; font-size: 13px;
+  }
+  .hero-meta div { display: flex; gap: 6px; align-items: center; }
+  .hero-meta strong { font-weight: 700; color: var(--yellow); }
+
+  /* INSTRUCTOR CARD */
+  .instructor-card {
+    position: absolute; top: 24px; right: 32px;
+    background: rgba(255,255,255,.10); backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 8px; padding: 10px 14px;
+    font-size: 11.5px; line-height: 1.4; max-width: 230px; z-index: 3;
+  }
+  .instructor-card .name { font-weight: 700; font-size: 12.5px; color: var(--yellow); margin-bottom: 2px; }
+  .instructor-card a { color: #fff; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,.5); }
+  @media (max-width: 760px) {
+    .instructor-card { position: static; margin-top: 14px; max-width: none; }
+    .hero h1 { font-size: 22px; }
+  }
+
+  /* LAYOUT */
+  .container { max-width: 1080px; margin: 0 auto; padding: 24px 28px 80px; }
+
+  /* TIMER BAR */
+  .timer-bar {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--card); border-bottom: 2px solid var(--border);
+    padding: 12px 24px; box-shadow: 0 2px 10px rgba(13,45,107,.06);
+    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .timer-bar.warn { background: #FFF7E6; border-bottom-color: var(--yellow); }
+  .timer-bar.crit { background: #FDECEC; border-bottom-color: var(--coral); }
+  .timer-display { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; }
+  .timer-display .icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--teal); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 14px;
+  }
+  .timer-bar.crit .timer-display .icon { background: var(--coral); animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100% {transform: scale(1);} 50% {transform: scale(1.1);} }
+  .progress-info { font-size: 13px; color: var(--muted); }
+  .save-indicator { font-size: 12px; color: var(--green); font-weight: 600; display: flex; align-items: center; gap: 6px; }
+  .save-indicator.saving { color: var(--muted); }
+
+  /* INTRO */
+  .intro {
+    background: var(--card); border: 1px solid var(--border); border-left: 5px solid var(--teal);
+    border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; box-shadow: var(--shadow);
+  }
+  .intro h2 { margin: 0 0 12px; font-size: 18px; color: var(--navy); display: flex; align-items: center; gap: 10px; }
+  .intro h2::before { content: ''; width: 6px; height: 22px; background: var(--yellow); border-radius: 3px; }
+  .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; margin-top: 14px; }
+  .rule-item { background: #F8FAFF; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 13.5px; }
+  .rule-item .rule-tag {
+    display: inline-block; background: var(--navy); color: #fff;
+    padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;
+    margin-bottom: 6px; letter-spacing: .3px;
+  }
+
+  /* TOKEN ENTRY */
+  .token-screen {
+    max-width: 480px; margin: 60px auto; background: var(--card);
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 32px; box-shadow: var(--shadow); text-align: center;
+  }
+  .token-screen h2 { margin: 0 0 8px; color: var(--navy); }
+  .token-screen p { color: var(--muted); font-size: 14px; }
+  .token-input {
+    font-family: 'Source Serif 4', Georgia, serif; font-weight: 600;
+    font-size: 22px; letter-spacing: 4px; text-align: center;
+    width: 100%; padding: 14px; border: 2px solid var(--border);
+    border-radius: 8px; margin: 18px 0; text-transform: uppercase;
+  }
+  .token-input:focus { border-color: var(--teal); outline: none; }
+  .token-error {
+    color: var(--coral); font-size: 13.5px; font-weight: 600;
+    background: #FDECEC; padding: 10px; border-radius: 6px;
+    border-left: 4px solid var(--coral); margin: 10px 0; text-align: left;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal); color: #fff; border: none; border-radius: 8px;
+    padding: 13px 28px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: inherit;
+    box-shadow: 0 3px 10px rgba(10,126,140,.25); transition: all .15s ease;
+  }
+  .btn:hover { background: var(--teal-2); transform: translateY(-1px); }
+  .btn:disabled { background: #B5C0D5; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn-primary { background: var(--navy); }
+  .btn-primary:hover { background: var(--navy-2); }
+  .btn-submit { background: linear-gradient(135deg, var(--green) 0%, var(--teal) 100%); padding: 16px 36px; font-size: 16px; }
+
+  /* SECTION DIVIDER */
+  .section-divider { margin: 28px 0 18px; display: flex; align-items: center; gap: 14px; }
+  .section-divider .label {
+    background: var(--navy); color: #fff; padding: 8px 18px; border-radius: 22px;
+    font-weight: 700; font-size: 13.5px; letter-spacing: .3px;
+  }
+  .section-divider .line { flex: 1; height: 2px; background: linear-gradient(90deg, var(--navy), transparent); }
+  .section-divider .article-tag { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+
+  /* MASTER CASE BOX (NEW) */
+  .case-box {
+    background: linear-gradient(135deg, #FFF7E6 0%, #FFFAF0 100%);
+    border: 1.5px solid var(--yellow); border-left: 5px solid var(--yellow);
+    border-radius: 10px; padding: 18px 22px; margin: 0 0 20px;
+    box-shadow: var(--shadow);
+  }
+  .case-box .case-header { margin-bottom: 8px; }
+  .case-box .case-tag {
+    display: inline-block; background: var(--yellow); color: #8A5A00;
+    padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 800;
+    letter-spacing: .4px; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .case-box h3 {
+    margin: 4px 0 8px; font-size: 17px; color: var(--navy);
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+  .case-box .case-body p, .case-box .case-body ul { font-size: 13.5px; line-height: 1.6; margin: 6px 0; }
+  .case-box .case-body ul { padding-left: 22px; }
+  .case-box .case-body li { margin: 3px 0; }
+
+  /* QUESTION CARD */
+  .question {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 24px; margin-bottom: 14px; box-shadow: var(--shadow);
+    border-left: 4px solid transparent; transition: border-left-color .2s;
+  }
+  .question.answered { border-left-color: var(--green); }
+  .q-head { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+  .q-num {
+    flex-shrink: 0; width: 36px; height: 36px;
+    background: var(--navy); color: #fff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+  }
+  .q-num.cross { background: var(--coral); }
+  .q-num.diagram { background: var(--yellow); color: var(--navy); }
+  .q-num.case { background: #8A5A00; }
+  .q-num.essay { background: var(--teal); width: 44px; font-size: 11px; }
+  .q-stem { flex: 1; font-size: 14.5px; line-height: 1.6; font-family: 'Source Serif 4', Georgia, serif; }
+  .q-tag {
+    display: inline-block; font-size: 10.5px; font-weight: 700;
+    padding: 2px 8px; border-radius: 12px;
+    background: #EAF1FF; color: var(--navy);
+    margin-bottom: 6px; letter-spacing: .3px; text-transform: uppercase;
+  }
+  .q-tag.method { background: #E6F7F4; color: #066B5A; }
+  .q-tag.case   { background: #FFF3D9; color: #8A5A00; }
+  .q-tag.cross  { background: #FFE6E6; color: #B83232; }
+  .q-tag.diagram{ background: #FFF7D6; color: #8A6500; }
+  .q-tag.essay  { background: #E6F7F4; color: #066B5A; }
+
+  .options { margin-top: 12px; padding-left: 48px; }
+  .option {
+    display: flex; gap: 12px; padding: 11px 14px; margin-bottom: 7px;
+    background: #FAFCFF; border: 1.5px solid var(--border); border-radius: 8px;
+    cursor: pointer; transition: all .12s;
+  }
+  .option:hover { border-color: var(--teal); background: #F0F7F8; }
+  .option input { display: none; }
+  .option-letter {
+    flex-shrink: 0; width: 26px; height: 26px;
+    border: 2px solid var(--border); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; color: var(--muted); background: #fff;
+  }
+  .option-text { font-size: 13.5px; line-height: 1.55; font-family: 'Nunito', sans-serif; }
+  .option input:checked ~ .option-letter,
+  .option.selected .option-letter { background: var(--teal); color: #fff; border-color: var(--teal); }
+  .option.selected { background: #E6F4F6; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(10,126,140,.1); }
+
+  /* DIAGRAM */
+  .diagram-wrap {
+    background: #FAFCFF; border: 1px dashed var(--border);
+    border-radius: 10px; padding: 18px; margin: 12px 0 14px; text-align: center;
+  }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption {
+    font-size: 12.5px; color: var(--muted); font-style: italic;
+    margin-top: 8px; font-family: 'Nunito', sans-serif;
+  }
+
+  /* CRITICAL-APPRAISAL EXCERPT BOX (NEW — Form B Q14) */
+  .excerpt-box {
+    background: #FAFCFF; border: 1px solid var(--border); border-left: 5px solid #B22;
+    border-radius: 8px; padding: 14px 18px; margin: 12px 0;
+    box-shadow: inset 0 0 0 1px rgba(13,45,107,.02);
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+  .excerpt-box .excerpt-meta {
+    font-size: 12px; color: var(--muted); font-family: 'Nunito', sans-serif;
+    border-bottom: 1px dashed var(--border); padding-bottom: 6px; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .excerpt-box .excerpt-text { font-size: 13.5px; line-height: 1.65; }
+  .excerpt-stamp {
+    display: inline-block; background: #FDECEC; color: #B22; padding: 2px 8px;
+    border-radius: 10px; font-size: 10.5px; font-weight: 800; letter-spacing: .3px;
+    text-transform: uppercase; border: 1px solid #F4B2B2;
+  }
+
+  /* DRAG-AND-DROP (NEW — Form C Q14) */
+  .ddrop-area {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0;
+  }
+  @media (max-width: 760px) { .ddrop-area { grid-template-columns: 1fr; } }
+  .ddrop-targets { display: flex; flex-direction: column; gap: 8px; }
+  .ddrop-target {
+    background: #FAFCFF; border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .ddrop-target.filled { border-color: var(--green); background: #F0FBF7; }
+  .t-label {
+    display: block; font-weight: 700; font-size: 13px; color: var(--navy); margin-bottom: 6px;
+    font-family: 'Nunito', sans-serif;
+  }
+  .t-slot {
+    min-height: 60px; background: #FFFFFF; border: 1.5px dashed var(--border);
+    border-radius: 6px; padding: 8px 10px; font-size: 12.5px; line-height: 1.5;
+    transition: background .15s, border-color .15s;
+  }
+  .t-slot.drag-over { background: #FFF7E6; border-color: var(--yellow); }
+  .t-placeholder { color: var(--muted); font-style: italic; font-size: 12px; }
+  .ddrop-bank {
+    background: #FFF7E6; border: 1.5px dashed var(--yellow); border-radius: 8px;
+    padding: 10px 12px; display: flex; flex-direction: column; gap: 8px;
+    min-height: 60px;
+  }
+  .ddrop-bank.drag-over { background: #FFEFC4; }
+  .ddrop-card {
+    background: #FFFFFF; border: 1.5px solid var(--border); border-radius: 6px;
+    padding: 8px 10px; font-size: 12.5px; line-height: 1.5;
+    cursor: grab; user-select: none; transition: all .12s;
+  }
+  .ddrop-card:hover { border-color: var(--teal); box-shadow: 0 2px 6px rgba(10,126,140,.15); }
+  .ddrop-card.dragging { opacity: 0.4; cursor: grabbing; }
+
+  /* ESSAY BLOCKS (NEW) */
+  .essay-block { margin-top: 6px; padding-left: 48px; }
+  .essay-textarea {
+    width: 100%; min-height: 180px;
+    border: 1.5px solid var(--border); border-radius: 8px; padding: 12px 14px;
+    font-family: 'Nunito', sans-serif; font-size: 13.5px; line-height: 1.65;
+    resize: vertical; background: #FAFCFF;
+  }
+  .essay-textarea:focus { outline: none; border-color: var(--teal); background: #fff; box-shadow: 0 0 0 3px rgba(10,126,140,.10); }
+  .essay-counter {
+    font-size: 11.5px; color: var(--muted); margin-top: 4px;
+    text-align: right; font-weight: 600;
+  }
+  .essay-counter.warn { color: #B66100; }
+  .essay-counter.over { color: var(--coral); }
+  .essay-note {
+    background: #E6F7F4; border-left: 3px solid var(--teal);
+    padding: 8px 12px; margin: 8px 0 10px; border-radius: 4px;
+    font-size: 12px; color: #066B5A;
+  }
+
+  /* SUBMIT PANEL */
+  .submit-panel {
+    background: var(--card); border: 2px solid var(--navy);
+    border-radius: 12px; padding: 24px 28px; margin-top: 30px; text-align: center;
+    background: linear-gradient(135deg, #F2F5FF 0%, #E8EFFC 100%);
+  }
+  .submit-panel h3 { margin: 0 0 8px; color: var(--navy); }
+  .answered-count {
+    display: inline-block; padding: 6px 14px; background: var(--card);
+    border-radius: 20px; font-weight: 700; color: var(--navy);
+    border: 1px solid var(--border); margin: 10px 0;
+  }
+  .submit-panel small { display: block; color: var(--muted); margin-top: 12px; font-size: 12.5px; }
+
+  /* MODALS */
+  .modal-backdrop {
+    position: fixed; inset: 0; background: rgba(13,45,107,.55);
+    display: none; align-items: center; justify-content: center; z-index: 100;
+    backdrop-filter: blur(3px);
+  }
+  .modal-backdrop.active { display: flex; }
+  .modal {
+    background: #fff; border-radius: 12px; padding: 28px 32px;
+    max-width: 500px; width: 92%; box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    animation: modalIn .2s ease;
+  }
+  @keyframes modalIn { from { opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);}}
+  .modal h3 { margin: 0 0 10px; color: var(--navy); font-size: 19px; }
+  .modal p { color: var(--muted); font-size: 14px; }
+  .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+  .btn-secondary { background: #fff; color: var(--navy); border: 1.5px solid var(--border); box-shadow: none; }
+  .btn-secondary:hover { background: #F8FAFF; }
+
+  /* DONE SCREEN */
+  .done-screen {
+    max-width: 540px; margin: 60px auto; background: var(--card);
+    border-radius: 12px; padding: 40px 32px; text-align: center;
+    box-shadow: var(--shadow); border-top: 6px solid var(--green);
+  }
+  .done-screen .check {
+    width: 70px; height: 70px; background: var(--green); color: #fff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 38px;
+  }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="instructor-card">
+    <div class="name">Dr. Samar J. Melhem</div>
+    <div>Assistant Professor of Digital Health<br>and Health Informatics</div>
+    <div style="margin-top:4px;">School of Pharmacy · University of Jordan</div>
+    <div>Office 225 · <a href="mailto:sa.melhem@ju.edu.jo">sa.melhem@ju.edu.jo</a></div>
+  </div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow"><span class="dot"></span> M.Pharm Pharmacy Administration · PIMS</span>
+    <h1>Two-Article Synthesis · e-Health in Cancer Care</h1>
+    <div class="subtitle">Postgraduate · Open-book · Form C · 60 minutes · 20 marks</div>
+    <div class="hero-meta">
+      <div>📘 <span><strong>Articles:</strong> Melhem 2024 (Digital Health) + Melhem 2025 (Frontiers in Public Health)</span></div>
+      <div>🕒 <span><strong>Window:</strong> Saturday 16 May 2026, 18:00 → 22:00 (Amman)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOKEN GATE -->
+<div id="tokenScreen" class="token-screen">
+  <h2>Enter your access token</h2>
+  <p>The token was sent to your University of Jordan email after registration. It is an 8-character code (uppercase letters and digits), valid for 24 hours.</p>
+  <input type="text" id="tokenInput" class="token-input" placeholder="XXXXXXXX" maxlength="12" autocomplete="off">
+  <div id="tokenError" class="token-error hidden"></div>
+  <button class="btn btn-primary" id="validateBtn">Validate token</button>
+  <p style="margin-top:18px; font-size:12px; color:var(--muted);">Form C · 60 minutes · 20 marks · One attempt</p>
+  <p style="margin-top:10px; font-size:12px; color:var(--muted);">No token yet? <a href="index.html" style="color:var(--teal); font-weight:600;">Register here</a></p>
+</div>
+
+<!-- BEGIN GATE -->
+<div id="beginScreen" class="token-screen hidden">
+  <h2 style="color:var(--green);">✓ Token verified</h2>
+  <p id="beginEmailLine"></p>
+  <p style="background:#FFF7E6; padding:12px; border-radius:8px; border-left:4px solid var(--yellow); text-align:left; margin: 16px 0;">
+    <strong>The 60-minute timer starts the moment you click below.</strong> You cannot pause it. Make sure you have BOTH articles open and a stable connection. Aim for ~2 min per MCQ and ~9 min per mini-essay.
+  </p>
+  <button class="btn btn-primary" id="beginBtn">Begin assessment</button>
+</div>
+
+<!-- ASSESSMENT -->
+<div id="assessment" class="hidden">
+  <div class="timer-bar">
+    <div class="timer-display">
+      <div class="icon">⏱</div>
+      <div>Time remaining: <span id="timer">60:00</span></div>
+    </div>
+    <div class="progress-info">Form C · <span id="answeredCount">0</span> / 18 answered</div>
+    <div class="save-indicator" id="saveIndicator">● Auto-saved</div>
+  </div>
+
+  <div class="container">
+    <div class="intro">
+      <h2>Before you begin</h2>
+      <p style="font-size:14px; margin: 4px 0 8px;">
+        This is a postgraduate, open-book synthesis assessment. You should have BOTH articles in front of you.
+        Questions are deliberately precise — each anchors on a specific paper detail (participant ID, programme name, exact figure, named subtheme, or reported methodological move). General knowledge of qualitative methods or e-health is <b>not</b> sufficient.
+      </p>
+      <div class="rules-grid">
+        <div class="rule-item">
+          <span class="rule-tag">FORMAT</span>
+          16 MCQs · 1 mark each (=16) + 2 mini-essays · 2 marks each (=4) = <b>20 marks</b>
+        </div>
+        <div class="rule-item">
+          <span class="rule-tag">TIME</span>
+          60 min from <em>Begin assessment</em>. Auto-submits when time ends. Target: ~2 min per MCQ, ~9 min per essay.
+        </div>
+        <div class="rule-item">
+          <span class="rule-tag">ATTEMPTS</span>
+          One attempt only. Tokens are bound to your university email.
+        </div>
+        <div class="rule-item">
+          <span class="rule-tag">SAVING</span>
+          MCQ responses auto-save every 30 seconds. You can lose connection briefly and continue.
+        </div>
+        <div class="rule-item">
+          <span class="rule-tag">MARKING</span>
+          MCQs are auto-graded on submission. Mini-essays are manually graded by Dr. Melhem.
+        </div>
+        <div class="rule-item">
+          <span class="rule-tag">FEEDBACK</span>
+          Grades and per-question feedback will be emailed on 17 May 2026.
+        </div>
+      </div>
+    </div>
+
+    <div class="case-box">
+  <div class="case-header">
+    <span class="case-tag">CASE SCENARIO · refer back for Q1-Q3</span>
+    <h3>Mrs N - a 54-year-old patient navigating Jordan's cancer-care system</h3>
+  </div>
+  <div class="case-body">
+    <p><b>Mrs N</b> is a 54-year-old Jordanian breast-cancer survivor in <b>Mafraq governorate</b>, 80 km north of Amman. She was diagnosed three years ago at a <b>Ministry of Health (MoH) public-sector hospital</b>, referred to <b>King Hussein Cancer Center (KHCC, semi-governmental)</b> for chemotherapy and surgery, and is now in follow-up. Her current routine:</p>
+    <ul>
+      <li>Endocrine therapy renewed every 3 months at the KHCC outpatient clinic in Amman.</li>
+      <li>Annual imaging at a <b>private radiology centre</b> in Irbid because the KHCC waiting list is &gt;4 months.</li>
+      <li>Hypothyroidism managed by her family doctor at a <b>MoH primary-care centre</b> in Mafraq.</li>
+      <li>Commercial private insurance (via husband's employer) covers <i>private-sector</i> care but does <i>not</i> cover KHCC or MoH.</li>
+    </ul>
+    <p>Each visit she carries a paper folder of prior imaging CDs, lab printouts, hand-written prescriptions and an oncology summary. She has never seen her own clinical record electronically. Last month her family doctor prescribed levothyroxine 50 mcg, unaware of an interaction with her KHCC endocrine therapy. She noticed worsening fatigue but did not connect the dots until her next KHCC appointment <b>two months later</b>.</p>
+    <p style="margin-top:8px; font-size:12.5px; color:var(--muted);">Use BOTH articles to answer Q1-Q3. The structures, sectors and HCP perspectives that produced this scenario are described explicitly in the papers.</p>
+  </div>
+</div>
+    <div class="section-divider">
+      <span class="label">Part 1 · Case-Anchored MCQs</span>
+      <span class="article-tag">Q1–Q3 · refer to Mrs N's case + both articles</span>
+      <span class="line"></span>
+    </div>
+    <div class="question" data-q="q1" data-qkey="Q1-CASE-SYNTH">
+      <div class="q-head">
+        <div class="q-num case">1</div>
+        <div class="q-stem">
+          <div class="q-tag case">CASE · SYNTHESIS</div>
+          Mrs N's case (above) is best characterised, using language from BOTH papers, as a convergence of (i) one structural feature from Article 1 Theme 1, AND (ii) one barrier subtheme from Article 2's ecosystem framework. Which pairing is most defensible?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q1" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">(i) Insurance market fragmentation only; (ii) the Social subtheme - wasta and informal networks substituting for shared records</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q1" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">(i) High antineoplastic medication costs; (ii) the Economic &amp; political subtheme - donor-dependent financing of cancer drugs</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q1" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">(i) Centralisation of tertiary services at KHCC; (ii) the Patients subtheme - health-literacy gaps and reluctance to use technology</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q1" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">(i) Lack of inter-organisational data exchange across sectors; (ii) the Organisational subtheme only - because the issue is a private-vs-public split</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q1" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">(i) Lack of inter-organisational data exchange across sectors; (ii) the Innovation subtheme - fragmented EHRs and absence of national interoperability standards</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q2" data-qkey="Q2-CASE-METHOD">
+      <div class="q-head">
+        <div class="q-num case">2</div>
+        <div class="q-stem">
+          <div class="q-tag method">METHOD · CASE TRANSFER</div>
+          Suppose you replicate Article 1's qualitative design in 2026 with a NEW sample of HCPs caring for patients like Mrs N. After 14 interviews, the LAST three transcripts produce no new codes for the Theme-1 'fragmentation' category, but you ARE still finding new codes within the Theme-2 'digital reforms' category. The methodologically correct conclusion is:
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q2" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Continue purposive recruitment focused on participant profiles relevant to Theme 2 - saturation is theme-specific, not sample-wide, and inadequate saturation in one theme threatens conclusions about it</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q2" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Switch to a quantitative survey for Theme 2 because thematic saturation is incompatible with prevalence questions</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q2" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Halt the study and re-run thematic analysis from scratch using Braun &amp; Clarke's reflexive approach, since framework analysis cannot accommodate uneven saturation across themes</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q2" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Stop data collection - saturation is a sample-level property and 14 interviews exceeds the count reported by Article 1</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q2" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Stop only once sample size reaches Article 1's reported n=22; otherwise continue to match the original study's power</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q3" data-qkey="Q3-CASE-REFORM">
+      <div class="q-head">
+        <div class="q-num case">3</div>
+        <div class="q-stem">
+          <div class="q-tag case">REFORM IDENTIFICATION</div>
+          Article 1 Theme 2 identifies a specific reform that would, if implemented, directly prevent the levothyroxine-endocrine therapy interaction that Mrs N's family doctor missed. The MOST precise reform - using the language the paper actually uses - is:
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q3" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Bulk procurement of antineoplastic medication through a Ministry-WHO partnership</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q3" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Replacing paper prescriptions with a private-sector e-prescribing service contracted to one preferred vendor</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q3" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Establishing a national tumour-board video network across the four sectors</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q3" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">A comprehensive e-health portal that leverages the national ID to federate cross-sector records (decentralisation / patient-centric models)</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q3" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">A nationwide cancer-screening campaign via mass-media and family-medicine referral</div>
+        </label>
+      </div>
+    </div>
+    <div class="section-divider">
+      <span class="label">Part 2 · Two-Article MCQs</span>
+      <span class="article-tag">Q4–Q13, Q15, Q16 · methodology + content + synthesis</span>
+      <span class="line"></span>
+    </div>
+    <div class="question" data-q="q4" data-qkey="Q4-EPISTEM">
+      <div class="q-head">
+        <div class="q-num ">4</div>
+        <div class="q-stem">
+          <div class="q-tag method">METHOD · EPISTEMOLOGY</div>
+          Article 2 explicitly names BOTH a thematic-analytic technique AND the epistemological position anchoring its coding. Which pairing matches the paper exactly?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q4" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Constant-comparison grounded theory · pragmatist epistemology</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q4" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Discourse analysis · post-structuralist paradigm</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q4" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Gale et al. Framework Method · critical-realist epistemology</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q4" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Interpretative phenomenological analysis (IPA) · hermeneutic paradigm</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q4" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Braun &amp; Clarke's reflexive thematic analysis · relativist constructivist paradigm</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q5" data-qkey="Q5-QUOTE-A1">
+      <div class="q-head">
+        <div class="q-num ">5</div>
+        <div class="q-stem">
+          <div class="q-tag default">QUOTE ATTRIBUTION</div>
+          In Article 1, the participant who said "We [Jordanians] spend more money on tobacco than food" - quoted to ground the tobacco-disease-burden argument - was identified as:
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q5" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">HCP2, senior oncology manager, KHCC</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q5" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">HCP16, nurse, public sector (semi-governmental)</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q5" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">HCP3, medical oncologist, private sector</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q5" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">HCP14, clinical nurse specialist, KHCC</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q5" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">HCP10, senior fellow oncologist, KHCC</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q6" data-qkey="Q6-HAKEEM">
+      <div class="q-head">
+        <div class="q-num ">6</div>
+        <div class="q-stem">
+          <div class="q-tag default">PROGRAMME · HAKEEM</div>
+          Which combination is fully consistent with Article 2's description of the Hakeem Program?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q6" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Initiated 2015 · managed by the Royal Medical Services · full public-sector coverage · 80 % comprehensive-EHR uptake</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q6" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Initiated 2009 · managed by Electronic Health Solutions (non-profit) · &lt;25 % primary-care EHR uptake · ~10.3 % comprehensive-EHR uptake</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q6" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Initiated 2012 · managed by the Higher Health Council · 60 % primary-care EHR coverage</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q6" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Initiated 2003 · for-profit Saudi subsidiary · covers KHCC patients only nationally</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q6" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Initiated 2009 · managed jointly by WHO and UNICEF · fully interoperable with private sector</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q7" data-qkey="Q7-CULT-BARRIER">
+      <div class="q-head">
+        <div class="q-num ">7</div>
+        <div class="q-stem">
+          <div class="q-tag default">PATIENT · CULTURE</div>
+          Which scenario does HCP2 describe in Article 2 as a culturally specific Patient-domain barrier - one the paper frames as a family-system phenomenon rather than a generic literacy problem?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q7" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Patients insisting on a male oncologist for cultural reasons across all clinical interactions</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q7" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Patients refusing palliative referrals owing to fatalistic beliefs about prognosis</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q7" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Patients refusing chemotherapy regimens because of dietary restrictions during Ramadan</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q7" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Patients refusing telemedicine consultations over privacy concerns about female imaging being recorded</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q7" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Families withholding the cancer diagnosis from an elderly patient, reacting with anger/violence when challenged</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q8" data-qkey="Q8-ORG-RISK">
+      <div class="q-head">
+        <div class="q-num ">8</div>
+        <div class="q-stem">
+          <div class="q-tag default">ORGANISATIONAL</div>
+          In Article 2, HCP8 flags an organisational-change risk specific to Jordanian health-system culture. The risk is best summarised as:
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q8" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Successful pilots fail at scale-up because of contractual vendor lock-in</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q8" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Ministry-funded change is cancelled at the next budget cycle without notice</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q8" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Clinician-led change is sabotaged because junior staff resist due to workload concerns</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q8" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Pilots succeed only when an external donor agency underwrites operating costs</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q8" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Top-down change reverts to the status quo once the senior leader who championed it leaves the organisation</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q9" data-qkey="Q9-POLICY-STRAT">
+      <div class="q-head">
+        <div class="q-num ">9</div>
+        <div class="q-stem">
+          <div class="q-tag default">POLICY · STRATEGY</div>
+          What does HCP1 in Article 2 claim about Jordan's national digital-health strategy?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q9" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">It is currently led by the World Bank and renewed every five years</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q9" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">There is no overarching national digital-health strategy directing transformation</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q9" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">It is restricted in scope to KHCC and the Royal Medical Services only</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q9" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">It is jointly governed by the Ministry of Health and the Jordan Medical Association</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q9" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">It is aligned with the WHO Global Strategy on Digital Health 2020-2025</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q10" data-qkey="Q10-SIX-DOMAINS">
+      <div class="q-head">
+        <div class="q-num ">10</div>
+        <div class="q-stem">
+          <div class="q-tag default">STRUCTURE · 6 DOMAINS</div>
+          Which list reproduces Article 2's six a priori ecosystem subthemes - exactly as the paper names them?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q10" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Technology; Workforce; Culture; Finance; National politics; Regional geographic context</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q10" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Provider; Patient; Payer; Policy; Process; Platform infrastructure</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q10" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Patients; HCPs; Innovation; Economic; Social context; Organisational context</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q10" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Innovation; Patients; Healthcare professionals; Organisational; Social; Economic and political</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q10" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Macro-level; Meso-level; Micro-level; Patient; Provider; Payer factors</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q11" data-qkey="Q11-KHCC-CAP">
+      <div class="q-head">
+        <div class="q-num ">11</div>
+        <div class="q-stem">
+          <div class="q-tag default">CONTEXT · KHCC</div>
+          Which figure does Article 1 state for KHCC capacity?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q11" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">148 beds · over 2300 new patients per year</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q11" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">250 beds · over 3000 new patients per year</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q11" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">200 beds · over 5000 new patients per year</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q11" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">180 beds · over 2800 new patients per year</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q11" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">100 beds · over 1500 new patients per year</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q12" data-qkey="Q12-TRANSLATION">
+      <div class="q-head">
+        <div class="q-num ">12</div>
+        <div class="q-stem">
+          <div class="q-tag method">COREQ · TRANSLATION</div>
+          Which translation / verification procedure did Article 1 actually report?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q12" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Translation outsourced to a Kingston University language services unit with kappa = 0.86</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q12" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Translation by SJM only, with no formal second-reviewer step reported</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q12" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Forward and back-translation by two certified medical translators with reconciliation</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q12" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Verbatim Arabic transcription; English translation by SJM with a subset reviewed by SNG and RK</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q12" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Bilingual transcription with simultaneous parallel coding in Arabic and English</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q13" data-qkey="Q13-LIMITATION">
+      <div class="q-head">
+        <div class="q-num ">13</div>
+        <div class="q-stem">
+          <div class="q-tag method">LIMITATION</div>
+          Which sample-composition gap is explicitly flagged in Article 1's Limitations section?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q13" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">No participants from outside Amman, limiting external validity</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q13" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Limited input from the primary-care sector - noted as a sampling gap</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q13" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Exclusion of male nurses from the cohort by recruitment design</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q13" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Under-representation of pharmacists relative to physician participants</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q13" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Absence of paediatric oncologists across the recruited sample</div>
+        </label>
+      </div>
+    </div>
+    <div class="section-divider">
+      <span class="label">Part 3 · Advanced Cross-Cutting Item</span>
+      <span class="article-tag">Q14 · applied · 1 mark</span>
+      <span class="line"></span>
+    </div>
+    <div class="question" data-q="q14" data-qkey="Q14-CROSS" data-qtype="ddrop">
+      <div class="q-head">
+        <div class="q-num cross">14</div>
+        <div class="q-stem">
+          <div class="q-tag cross">DRAG-AND-DROP · METHODOLOGY</div>
+          <p style="margin:8px 0 10px;">Match each qualitative-methodology TERM (left) to its operational definition AS USED in the two papers (right). Drag a definition card on the right onto its matching term on the left. <b>All five pairings must be correct for the 1 mark.</b></p>
+
+<div id="ddropArea" class="ddrop-area">
+  <div class="ddrop-targets">
+    <div class="ddrop-target" data-target="T1">
+      <span class="t-label">1. Purposive sampling</span>
+      <div class="t-slot" data-slot="T1"><span class="t-placeholder">drop definition here</span></div>
+    </div>
+    <div class="ddrop-target" data-target="T2">
+      <span class="t-label">2. Theoretical / data saturation</span>
+      <div class="t-slot" data-slot="T2"><span class="t-placeholder">drop definition here</span></div>
+    </div>
+    <div class="ddrop-target" data-target="T3">
+      <span class="t-label">3. Framework Method (Gale et al.)</span>
+      <div class="t-slot" data-slot="T3"><span class="t-placeholder">drop definition here</span></div>
+    </div>
+    <div class="ddrop-target" data-target="T4">
+      <span class="t-label">4. Reflexivity (COREQ)</span>
+      <div class="t-slot" data-slot="T4"><span class="t-placeholder">drop definition here</span></div>
+    </div>
+    <div class="ddrop-target" data-target="T5">
+      <span class="t-label">5. Critical-realist epistemology</span>
+      <div class="t-slot" data-slot="T5"><span class="t-placeholder">drop definition here</span></div>
+    </div>
+  </div>
+  <div class="ddrop-bank" id="ddropBank">
+    <div class="ddrop-card" draggable="true" data-card="D1">
+      <b>D1.</b> Selecting participants for their relevance to the research question (e.g. HCP role, sector, region) rather than at random - used in BOTH papers' stage-1 recruitment.
+    </div>
+    <div class="ddrop-card" draggable="true" data-card="D2">
+      <b>D2.</b> The point at which subsequent transcripts add no new codes <i>within a given theme</i> - assessed theme-by-theme, not by sample size alone.
+    </div>
+    <div class="ddrop-card" draggable="true" data-card="D3">
+      <b>D3.</b> A hybrid inductive-deductive analytic technique that builds a matrix of cases x codes and supports comparison across participants and themes.
+    </div>
+    <div class="ddrop-card" draggable="true" data-card="D4">
+      <b>D4.</b> The researcher's account of how their position, training and prior assumptions could shape the data and its interpretation - reported on COREQ items 6-8.
+    </div>
+    <div class="ddrop-card" draggable="true" data-card="D5">
+      <b>D5.</b> An epistemological stance that accepts an underlying reality exists but is accessed only through fallible, context-shaped interpretations - the position anchoring Article 2's coding.
+    </div>
+  </div>
+</div>
+<p style="font-size:12px; color:var(--muted); margin-top:8px;">To redo a pairing, drag a placed card back to the bank on the right.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section-divider">
+      <span class="label">Part 4 · Synthesis MCQs</span>
+      <span class="article-tag">Q15–Q16 · facilitators + policy synthesis</span>
+      <span class="line"></span>
+    </div>
+    <div class="question" data-q="q15" data-qkey="Q15-INNOV-FACIL">
+      <div class="q-head">
+        <div class="q-num ">15</div>
+        <div class="q-stem">
+          <div class="q-tag default">INNOVATION DOMAIN</div>
+          Which set best reproduces the Innovation-subtheme FACILITATORS that Article 2 lists in Table 2 - i.e. the design / governance properties that participants said WOULD support adoption?
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q15" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Top-down government mandates; closed proprietary standards; donor financing only; offshore servers; locked APIs; subscription tiers; mandatory clinical adoption</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q15" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">Mandatory adoption; vendor exclusivity contracts; closed-source architecture; private-equity funding; rapid scale-up; offshore hosting; bundled licensing</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q15" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">Specialist endorsement; non-profit zero-cost model; open standards architecture; security accreditation; usability testing; third-party management; opt-in autonomy</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q15" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">Influencer marketing campaigns; patient-paid premium tiers; gamification rewards; AI auto-coding; subscription bundling; chatbot triage; social-media outreach</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q15" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">Government monopoly model; subscription bundling; offshore hosting; vendor lock-in; closed APIs; mandatory training; centralised audit</div>
+        </label>
+      </div>
+    </div>
+    <div class="question" data-q="q16" data-qkey="Q16-SYNTH-POLICY">
+      <div class="q-head">
+        <div class="q-num ">16</div>
+        <div class="q-stem">
+          <div class="q-tag cross">SYNTHESIS · POLICY</div>
+          Reading Article 1 and Article 2 together, the policy reform with the STRONGEST cross-paper support - addressing a structural barrier named in Article 1 Theme 1 AND a facilitator named in Article 2's Economic &amp; political subtheme - is:
+        </div>
+      </div>
+      <div class="options">
+        <label class="option" data-letter="A">
+          <input type="radio" name="q16" value="A">
+          <div class="option-letter">A</div>
+          <div class="option-text">Patient-paid premium tiers for tele-oncology access through private insurers</div>
+        </label>
+        <label class="option" data-letter="B">
+          <input type="radio" name="q16" value="B">
+          <div class="option-letter">B</div>
+          <div class="option-text">A national tele-ICU network coordinated by KHCC across all sectors</div>
+        </label>
+        <label class="option" data-letter="C">
+          <input type="radio" name="q16" value="C">
+          <div class="option-letter">C</div>
+          <div class="option-text">A blockchain ledger operated independently by each of the four sectors</div>
+        </label>
+        <label class="option" data-letter="D">
+          <input type="radio" name="q16" value="D">
+          <div class="option-letter">D</div>
+          <div class="option-text">An e-health portal leveraging the national ID, governed by an independent non-profit (e.g. the Electronic Health Solutions model) and embedded in a renewed national digital-health strategy</div>
+        </label>
+        <label class="option" data-letter="E">
+          <input type="radio" name="q16" value="E">
+          <div class="option-letter">E</div>
+          <div class="option-text">A KHCC-led WhatsApp business account for inter-hospital messaging across sectors</div>
+        </label>
+      </div>
+    </div>
+    <div class="section-divider">
+      <span class="label">Part 5 · Mini-Essays</span>
+      <span class="article-tag">E1–E2 · 2 marks each · manual grading</span>
+      <span class="line"></span>
+    </div>
+    <div class="question essay-q" data-q="essay1" data-qkey="E1" data-qtype="essay">
+      <div class="q-head">
+        <div class="q-num essay">E1</div>
+        <div class="q-stem">
+          <div class="q-tag essay">MINI-ESSAY 1 · 2 MARKS · ~9 min</div>
+          Drawing on BOTH papers, write a focused response (~200 words) defending the following claim to a sceptical Ministry of Health official: <i>"In Jordan, a national digital-health strategy with independent non-profit governance is a higher-leverage cancer-care reform than expanding the oncology workforce."</i> Anchor your argument in at least: (a) ONE Article 1 structural finding, (b) ONE Article 2 ecosystem subtheme OTHER than Patients, and (c) ONE explicit risk that participants raised in either paper.
+        </div>
+      </div>
+      <div class="essay-block">
+        <div class="essay-note">
+          <b>Manual grading.</b> ~200 words. Anchor your answer on specific paper details (HCP IDs, subtheme names, programme names, exact figures, methodological terms). Vague generalities will not score.
+        </div>
+        <textarea id="essay1Text" name="essay1" class="essay-textarea" placeholder="Type your answer here..." maxlength="2500"></textarea>
+        <div id="essay1Counter" class="essay-counter">0 / ~200 words · 0 / 2500 chars</div>
+      </div>
+    </div>
+    <div class="question essay-q" data-q="essay2" data-qkey="E2" data-qtype="essay">
+      <div class="q-head">
+        <div class="q-num essay">E2</div>
+        <div class="q-stem">
+          <div class="q-tag essay">MINI-ESSAY 2 · 2 MARKS · ~9 min</div>
+          A reviewer comments that Article 1 and Article 2 are 'just two qualitative interview studies' and asks why their findings should be considered TRUSTWORTHY enough to inform a national e-health portal procurement. In ~200 words, defend the methodological trustworthiness of the two papers by referencing at least THREE specific procedures - at least one from <i>sampling</i>, one from <i>analysis</i>, and one from <i>reporting / reflexivity</i> - using terminology consistent with COREQ and the language each paper actually uses.
+        </div>
+      </div>
+      <div class="essay-block">
+        <div class="essay-note">
+          <b>Manual grading.</b> ~200 words. Anchor your answer on specific paper details (HCP IDs, subtheme names, programme names, exact figures, methodological terms). Vague generalities will not score.
+        </div>
+        <textarea id="essay2Text" name="essay2" class="essay-textarea" placeholder="Type your answer here..." maxlength="2500"></textarea>
+        <div id="essay2Counter" class="essay-counter">0 / ~200 words · 0 / 2500 chars</div>
+      </div>
+    </div>
+    <div class="submit-panel">
+      <h3>Ready to submit?</h3>
+      <p style="margin: 8px 0;"><span class="answered-count" id="answeredSummary">0 / 18 questions answered</span></p>
+      <p style="font-size:13px; color:var(--muted); margin: 10px 0;">
+        You can change answers up to the moment of submission. After clicking submit, your responses are final.
+      </p>
+      <button class="btn btn-submit" id="submitBtn">Submit final responses</button>
+      <small>MCQ grades are calculated server-side from your saved answers. Mini-essays are queued for Dr. Melhem's manual review.</small>
+    </div>
+
+  </div><!-- /container -->
+</div><!-- /assessment -->
+
+<!-- CONFIRM SUBMIT MODAL -->
+<div id="confirmModal" class="modal-backdrop">
+  <div class="modal">
+    <h3>Submit your final responses?</h3>
+    <p>You have answered <b><span id="confirmCount">0</span> / 18</b> items (16 MCQs + 2 essays). Unanswered MCQs score 0; blank essays receive a 0 from Dr. Melhem. This action cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" id="cancelSubmit">Keep working</button>
+      <button class="btn btn-submit" id="confirmSubmit">Submit final responses</button>
+    </div>
+  </div>
+</div>
+
+<!-- TIMEUP MODAL -->
+<div id="timeupModal" class="modal-backdrop">
+  <div class="modal">
+    <h3 style="color:var(--coral);">⏰ Time's up</h3>
+    <p>Your responses are being submitted automatically. Do not close this tab.</p>
+  </div>
+</div>
+
+<!-- DONE SCREEN -->
+<div id="doneScreen" class="done-screen hidden">
+  <div class="check">✓</div>
+  <h2 style="color:var(--navy); margin: 0 0 10px;">Responses received</h2>
+  <p id="doneMsg" style="color:var(--muted); font-size: 14.5px;">Submission received.</p>
+  <p style="font-size:13px; color:var(--muted); margin-top: 20px;">
+    Per-question feedback and grades will be emailed on <b>17 May 2026</b>. Mini-essays may take 24-48 hours longer.
+  </p>
+  <p style="font-size:12.5px; color:var(--muted); margin-top: 16px;">
+    Questions? Dr. Samar J. Melhem · <a href="mailto:sa.melhem@ju.edu.jo" style="color:var(--teal);">sa.melhem@ju.edu.jo</a>
+  </p>
+</div>
+
+<script>
+// =========================================================================
+// PIMS Two-Article Synthesis · Form C · client-side controller
+// =========================================================================
+const FORM_ID = "C";
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwPdJA4x8ni5JqTndLTK8sKQJ9Yqmm2_2SjE_Ia9EzfSSCTJ86GDo0vy7czN0UgZk26/exec";
+const TOTAL_MCQS = 16;
+const TOTAL_ESSAYS = 2;
+const TOTAL_ITEMS = TOTAL_MCQS + TOTAL_ESSAYS;  // 18
+
+let TOKEN = null;
+let STUDENT_EMAIL = null;
+let DEADLINE_MS = null;
+let TIMER_INTERVAL = null;
+let AUTOSAVE_INTERVAL = null;
+let SUBMITTED = false;
+
+function $(id) { return document.getElementById(id); }
+function show(id) { $(id).classList.remove('hidden'); }
+function hide(id) { $(id).classList.add('hidden'); }
+function setError(msg) { const e=$('tokenError'); e.textContent=msg; e.classList.remove('hidden'); }
+function clearError() { $('tokenError').classList.add('hidden'); }
+
+// =========================================================================
+// BACKEND HELPERS
+// =========================================================================
+async function backendPost(payload) {
+  const res = await fetch(BACKEND_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    redirect: 'follow',
+    body: JSON.stringify(payload)
+  });
+  return res.json();
+}
+async function backendGet(params) {
+  const url = new URL(BACKEND_URL);
+  Object.keys(params).forEach(k => url.searchParams.set(k, params[k]));
+  const res = await fetch(url.toString(), { method: 'GET', redirect: 'follow' });
+  return res.json();
+}
+
+// =========================================================================
+// COLLECT ANSWERS
+//   - q1 .. q16  : MCQ answers (single letter A-E, or for ddrop: T1=Dx;T2=Dx;...)
+//   - essay1, essay2 : free-text essays
+// =========================================================================
+function getDdropAnswer() {
+  // Form C Q14 only — read the slot states
+  const targets = document.querySelectorAll('.ddrop-target');
+  if (!targets.length) return null;
+  const pairs = [];
+  targets.forEach(t => {
+    const tid = t.dataset.target;
+    const card = t.querySelector('.ddrop-card');
+    pairs.push(tid + '=' + (card ? card.dataset.card : ''));
+  });
+  return pairs.join(';');
+}
+
+function getAnswers() {
+  const out = {};
+  for (let i = 1; i <= TOTAL_MCQS; i++) {
+    // Q14 may be a ddrop on Form C
+    if (i === 14 && FORM_ID === 'C') {
+      const dd = getDdropAnswer();
+      if (dd && !/=\s*$/.test(dd) && !/=\;/.test(dd)) {
+        // only record if all 5 slots have a card
+        const all_filled = dd.split(';').every(p => /=D[1-5]$/.test(p));
+        if (all_filled) out['q' + i] = dd;
+      }
+    } else {
+      const sel = document.querySelector('input[name="q' + i + '"]:checked');
+      if (sel) out['q' + i] = sel.value;
+    }
+  }
+  for (let i = 1; i <= TOTAL_ESSAYS; i++) {
+    const ta = document.getElementById('essay' + i + 'Text');
+    if (ta && ta.value.trim().length > 0) out['essay' + i] = ta.value.trim();
+  }
+  return out;
+}
+
+function answeredCount() {
+  return Object.keys(getAnswers()).length;
+}
+function updateCount() {
+  const n = answeredCount();
+  $('answeredCount').textContent = n;
+  $('answeredSummary').textContent = n + ' / ' + TOTAL_ITEMS + ' questions answered';
+}
+
+// =========================================================================
+// TOKEN VALIDATION
+// =========================================================================
+async function validateToken() {
+  clearError();
+  const t = $('tokenInput').value.trim().toUpperCase();
+  if (!t || t.length < 6) { setError('Please enter the token from your email.'); return; }
+  $('validateBtn').disabled = true;
+  $('validateBtn').textContent = 'Verifying…';
+  try {
+    const resp = await backendGet({ action: 'validate', token: t, form: FORM_ID });
+    if (!resp.ok) { setError(resp.error || 'Invalid token.'); $('validateBtn').disabled = false; $('validateBtn').textContent = 'Validate token'; return; }
+    TOKEN = t;
+    STUDENT_EMAIL = resp.email;
+    const nameLine = resp.name ? '<b>' + resp.name + '</b> · ' : '';
+    $('beginEmailLine').innerHTML = nameLine + 'Signed in as <b>' + resp.email + '</b> · Form <b>' + resp.form + '</b>';
+    hide('tokenScreen');
+    show('beginScreen');
+  } catch (err) {
+    setError('Network error. Please check your connection and try again.');
+    $('validateBtn').disabled = false;
+    $('validateBtn').textContent = 'Validate token';
+  }
+}
+
+// =========================================================================
+// BEGIN ASSESSMENT
+// =========================================================================
+async function beginAssessment() {
+  $('beginBtn').disabled = true;
+  $('beginBtn').textContent = 'Starting…';
+  try {
+    const resp = await backendGet({ action: 'start', token: TOKEN });
+    if (!resp.ok) { alert(resp.error || 'Could not start.'); $('beginBtn').disabled = false; $('beginBtn').textContent = 'Begin assessment'; return; }
+    DEADLINE_MS = new Date(resp.deadline_iso).getTime();
+    hide('beginScreen');
+    show('assessment');
+    startTimer();
+    startAutosave();
+    window.scrollTo(0, 0);
+  } catch (err) {
+    alert('Network error. Please try again.');
+    $('beginBtn').disabled = false;
+    $('beginBtn').textContent = 'Begin assessment';
+  }
+}
+
+// =========================================================================
+// TIMER
+// =========================================================================
+function startTimer() {
+  if (TIMER_INTERVAL) clearInterval(TIMER_INTERVAL);
+  TIMER_INTERVAL = setInterval(tick, 1000);
+  tick();
+}
+function tick() {
+  if (SUBMITTED) return;
+  const remaining = Math.max(0, Math.floor((DEADLINE_MS - Date.now()) / 1000));
+  const m = Math.floor(remaining / 60);
+  const s = remaining % 60;
+  $('timer').textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  const bar = document.querySelector('.timer-bar');
+  bar.classList.toggle('warn', remaining <= 600 && remaining > 60);
+  bar.classList.toggle('crit', remaining <= 60);
+  if (remaining <= 0) { autoSubmit(); }
+}
+
+// =========================================================================
+// AUTOSAVE
+// =========================================================================
+function startAutosave() {
+  if (AUTOSAVE_INTERVAL) clearInterval(AUTOSAVE_INTERVAL);
+  AUTOSAVE_INTERVAL = setInterval(autosave, 30000);
+}
+async function autosave() {
+  if (SUBMITTED) return;
+  const ind = $('saveIndicator');
+  ind.textContent = '◐ Saving…'; ind.classList.add('saving');
+  try {
+    await backendPost({ action: 'autosave', token: TOKEN, form: FORM_ID, answers: getAnswers() });
+    ind.textContent = '● Auto-saved'; ind.classList.remove('saving');
+  } catch (err) {
+    ind.textContent = '⚠ Connection lost — will retry'; ind.classList.add('saving');
+  }
+}
+
+// =========================================================================
+// SUBMIT
+// =========================================================================
+function openConfirm() {
+  $('confirmCount').textContent = answeredCount();
+  $('confirmModal').classList.add('active');
+}
+function closeConfirm() { $('confirmModal').classList.remove('active'); }
+async function doSubmit(autoFromTimeup) {
+  if (SUBMITTED) return;
+  SUBMITTED = true;
+  if (TIMER_INTERVAL) clearInterval(TIMER_INTERVAL);
+  if (AUTOSAVE_INTERVAL) clearInterval(AUTOSAVE_INTERVAL);
+  closeConfirm();
+  if (autoFromTimeup) $('timeupModal').classList.add('active');
+  try {
+    const resp = await backendPost({ action: 'submit', token: TOKEN, form: FORM_ID, answers: getAnswers() });
+    if (!resp.ok) {
+      alert('Submission error: ' + (resp.error || 'unknown'));
+      SUBMITTED = false;
+      return;
+    }
+    setTimeout(() => {
+      $('timeupModal').classList.remove('active');
+      hide('assessment');
+      show('doneScreen');
+      $('doneMsg').textContent = resp.message || 'Submission received.';
+      window.scrollTo(0,0);
+    }, autoFromTimeup ? 2000 : 0);
+  } catch (err) {
+    alert('Network error during submission. Please retry.');
+    SUBMITTED = false;
+  }
+}
+function autoSubmit() { doSubmit(true); }
+
+// =========================================================================
+// DRAG-AND-DROP (only used on Form C Q14)
+// =========================================================================
+function initDdrop() {
+  const cards = document.querySelectorAll('.ddrop-card');
+  const slots = document.querySelectorAll('.t-slot');
+  const bank = document.getElementById('ddropBank');
+  if (!cards.length) return;
+
+  let draggedCard = null;
+
+  cards.forEach(card => {
+    card.addEventListener('dragstart', (e) => {
+      draggedCard = card;
+      card.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', card.dataset.card);
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('dragging');
+      draggedCard = null;
+    });
+  });
+
+  // Slots accept cards
+  slots.forEach(slot => {
+    slot.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      slot.classList.add('drag-over');
+    });
+    slot.addEventListener('dragleave', () => slot.classList.remove('drag-over'));
+    slot.addEventListener('drop', (e) => {
+      e.preventDefault();
+      slot.classList.remove('drag-over');
+      if (!draggedCard) return;
+      // Move any existing card in this slot back to the bank
+      const existing = slot.querySelector('.ddrop-card');
+      if (existing) bank.appendChild(existing);
+      // Clear placeholder
+      const ph = slot.querySelector('.t-placeholder');
+      if (ph) ph.remove();
+      slot.appendChild(draggedCard);
+      slot.parentElement.classList.add('filled');
+      updateCount();
+    });
+  });
+
+  // Bank accepts cards being returned
+  bank.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    bank.classList.add('drag-over');
+  });
+  bank.addEventListener('dragleave', () => bank.classList.remove('drag-over'));
+  bank.addEventListener('drop', (e) => {
+    e.preventDefault();
+    bank.classList.remove('drag-over');
+    if (!draggedCard) return;
+    // Remove from its previous slot if any
+    const prevSlot = draggedCard.closest('.t-slot');
+    bank.appendChild(draggedCard);
+    if (prevSlot) {
+      // Re-add a placeholder so the slot doesn't look empty
+      const ph = document.createElement('span');
+      ph.className = 't-placeholder';
+      ph.textContent = 'drop definition here';
+      prevSlot.appendChild(ph);
+      prevSlot.parentElement.classList.remove('filled');
+    }
+    updateCount();
+  });
+}
+
+// =========================================================================
+// ESSAY counters
+// =========================================================================
+function initEssayCounters() {
+  for (let i = 1; i <= TOTAL_ESSAYS; i++) {
+    const ta = document.getElementById('essay' + i + 'Text');
+    const ctr = document.getElementById('essay' + i + 'Counter');
+    if (!ta || !ctr) continue;
+    const update = () => {
+      const text = ta.value;
+      const words = (text.trim().match(/\S+/g) || []).length;
+      const chars = text.length;
+      ctr.textContent = words + ' / ~200 words · ' + chars + ' / 2500 chars';
+      ctr.classList.remove('warn','over');
+      if (words > 280) ctr.classList.add('warn');
+      if (chars > 2400) ctr.classList.add('over');
+      updateCount();
+    };
+    ta.addEventListener('input', update);
+    update();
+  }
+}
+
+// =========================================================================
+// EVENT BINDING
+// =========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+  // Pre-fill token from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlTok = (urlParams.get('token') || '').toUpperCase();
+  if (urlTok) $('tokenInput').value = urlTok;
+
+  $('validateBtn').addEventListener('click', validateToken);
+  $('tokenInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') validateToken(); });
+  $('beginBtn').addEventListener('click', beginAssessment);
+  $('submitBtn').addEventListener('click', openConfirm);
+  $('cancelSubmit').addEventListener('click', closeConfirm);
+  $('confirmSubmit').addEventListener('click', () => doSubmit(false));
+
+  // Option click → toggle radio + visual selected
+  document.querySelectorAll('.question').forEach(qBlock => {
+    qBlock.querySelectorAll('.option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        qBlock.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        const input = opt.querySelector('input');
+        input.checked = true;
+        qBlock.classList.add('answered');
+        updateCount();
+      });
+    });
+  });
+
+  // Drag-and-drop (Form C only)
+  initDdrop();
+
+  // Essay counters
+  initEssayCounters();
+
+  // Block right-click + copy on questions to slow LLM-paste workflows
+  document.querySelectorAll('.q-stem, .option-text, .case-body, .excerpt-text').forEach(el => {
+    el.addEventListener('copy', (e) => { e.preventDefault(); });
+    el.addEventListener('contextmenu', (e) => { e.preventDefault(); });
+  });
+
+  // Warn on tab close while in progress
+  window.addEventListener('beforeunload', (e) => {
+    if (DEADLINE_MS && !SUBMITTED) {
+      e.preventDefault();
+      e.returnValue = 'You have an assessment in progress. Are you sure you want to leave?';
+    }
+  });
+});
+</script>
+</body>
+</html>
